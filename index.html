@@ -19,7 +19,7 @@
 }
   </style>
 <body ng-app="myApp" ng-controller="messageController" ng-cloak>
-    <div >{{date.getMonth()}}-{{date.getDate()}}</div>
+    <div >{{date.getMonth() + 1}}-{{date.getDate()}}-{{date.getYear()}}</div>
     <div id="msg" class="message" >{{todayMessage}}</div>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.4/angular.min.js"></script>
 <script>
@@ -27,7 +27,7 @@ var myApp = angular.module('myApp',[]);
 
 myApp.controller('messageController', ['$scope', function($scope) {
     $scope.date = new Date() ;
-    $scope.isBirthday = ($scope.date.getMonth()==10)&&($scope.date.getDate()==17);
+    $scope.isBirthday = ($scope.date.getMonth()+1==10)&&($scope.date.getDate()==17);
     //TODO: get the index by date, after the birthday
     const todayIndex = 0;
 
