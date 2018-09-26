@@ -20,7 +20,7 @@
   </style>
 <body ng-app="myApp" ng-controller="messageController" ng-cloak>
     <div >{{date.getMonth()}}-{{date.getDate()}}</div>
-    <div id="msg" class="message" >{{todaymessage}}</div>
+    <div id="msg" class="message" >{{todayMessage}}</div>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.4/angular.min.js"></script>
 <script>
 var myApp = angular.module('myApp',[]);
@@ -33,7 +33,7 @@ myApp.controller('messageController', ['$scope', function($scope) {
 
     //TODO store messages somewhere, maybe encrypted?
     $scope.messages = ['This is the first message!!'];
-    $scope.todaymessage = $scope.messages[todayindex];
+    $scope.todayMessage = $scope.messages[todayIndex];
 }]);
 </script>
 </body>
