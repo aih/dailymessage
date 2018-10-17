@@ -30,13 +30,19 @@
 var myApp = angular.module('myApp',[]);
 
 myApp.controller('messageController', ['$scope', function($scope) {
-    $scope.date = new Date() ;
+    $scope.date = new Date();
     $scope.isBirthday = ($scope.date.getMonth()+1==10)&&($scope.date.getDate()==17);
-    //TODO: get the index by date, after the birthday
-    const todayIndex = 0;
+   
+    var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
+    //TODO: handle years after 2018
+    // This is October 17, 2018; Months are zero-indexed
+    var birthDate = new Date(2018,9,17);
+    var todayDate = new Date()
+    var diffDays = Math.round(Math.abs((birthDate.getTime() - todayDate.getTime())/(oneDay)));
+    var todayIndex = diffDays;
 
     //TODO store messages somewhere, maybe encrypted?
-    $scope.messages = ['Happy Birthday!!! May this be the first day of a year filled with love, friendship and Tikkun Olam.'];
+    $scope.messages = ['Happy Birthday!!! May this be the first day of a year filled with love, friendship and Tikkun Olam.', 'You always amaze me with your spirit, creativity and energy.', 'Your laughter is life-affirming and makes those you are with happy.'];
     $scope.todayMessage = $scope.messages[todayIndex];
 }]);
 </script>
