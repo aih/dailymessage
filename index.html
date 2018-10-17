@@ -6,11 +6,14 @@
     body{
       text-align:center;
    }
+     .date{
+    font-size: calc(18px + 1vw);
+    }
     .message{
     display: inline-block;
     margin-top: 200px;
     font-weight: bold;
-    font-size: 80pt;
+    font-size: calc(40px + 1vw);
     font-family: Arial, sans-serif;
     text-decoration: none;
     color: black;
@@ -20,7 +23,7 @@
 }
   </style>
 <body ng-app="myApp" ng-controller="messageController" ng-cloak>
-    <div >{{date.getMonth() + 1}}-{{date.getDate()}}-{{date.getFullYear()}}</div>
+    <div class="date">{{date.getMonth() + 1}}-{{date.getDate()}}-{{date.getFullYear()}}</div>
     <div id="msg" class="message" >{{todayMessage}}</div>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.4/angular.min.js"></script>
 <script>
