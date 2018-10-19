@@ -39,11 +39,12 @@ myApp.controller('messageController', ['$scope', function($scope) {
     // This is October 17, 2018; Months are zero-indexed
     var birthDate = new Date(2018,9,17);
     var todayDate = new Date()
-    var diffDays = Math.round(Math.abs((birthDate.getTime() - todayDate.getTime())/(oneDay)));
+    var diffDays = Math.round(Math.abs((todayDate.getTime() - birthDate.getTime())/(oneDay)));
     var todayIndex = diffDays;
 
     //TODO store messages somewhere, maybe encrypted?
-    $scope.messages = ['Happy ל Birthday!!! May this year bring joy to your לב, as you continue to perform Tikkun Olam, fixing that which is broken in the world.', 'You always amaze me with your spirit, creativity and energy.', 'Your laughter is life-affirming and makes those you are with happy.'];
+    $scope.messages = ['Happy ל Birthday!!! May this year bring joy to your לב, as you continue to perform Tikkun Olam, fixing that which is broken in the world.', 'You always amaze me with your spirit, creativity and energy.', 'Your laughter is life-affirming and makes those you are with happy.',
+                      'Open your mouth for the those who cannot speak, speak for all who have been passed by. - Psalms 31:8', ];
     $scope.todayMessage = $scope.messages[todayIndex]||'I love you';
 }]);
 </script>
