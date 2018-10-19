@@ -39,7 +39,7 @@ myApp.controller('messageController', ['$scope', function($scope) {
     // This is October 17, 2018; Months are zero-indexed
     var birthDate = new Date(2018,9,17);
     var todayDate = new Date()
-    var diffDays = Math.round(Math.abs((todayDate.getTime() - birthDate.getTime())/(oneDay)));
+    var diffDays = Math.ceil(Math.abs((todayDate.getTime() - birthDate.getTime())/(oneDay)));
     var todayIndex = diffDays;
 
     //TODO store messages somewhere, maybe encrypted?
